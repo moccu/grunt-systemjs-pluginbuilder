@@ -1,7 +1,11 @@
 var
 	FILES_TO_VALIDATE = [
 		'tasks/**/*.js',
-		'Gruntfile.js'
+		'tests/**/*.js',
+		'Gruntfile.js',
+
+		// Excludes:
+		'!**/build/**/*.js'
 	],
 	FILES_TO_TEST = [
 		'tests/tests*.js'
@@ -11,6 +15,7 @@ var
 
 module.exports = function(grunt) {
 
+	grunt.loadTasks('tasks');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-jscs');
 	grunt.loadNpmTasks('grunt-lintspaces');
@@ -49,6 +54,16 @@ module.exports = function(grunt) {
 		nodeunit: {
 			all: {
 				src: FILES_TO_TEST
+			}
+		},
+
+		pluginbuilder: {
+			tests: {
+				options: {
+					configPath: 'tests/config.js',
+					basePath: 'tests/fixtures/Base.js',
+					pluginPathes: 'tests/fixtures/Plugin*.js'
+				}
 			}
 		}
 	});

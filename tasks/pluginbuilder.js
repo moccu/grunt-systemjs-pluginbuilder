@@ -5,18 +5,31 @@ var
 
 module.exports = function(grunt) {
 
-	function onMessage(message) {
-		grunt.log.writeln(message);
+	function onMessage(data) {
+		var colors = {
+			error: 'red',
+			info: 'white',
+			success: 'green'
+		};
+
+		grunt.log.writeln(data.message[colors[data.type]]);
 	}
 
 	grunt.registerMultiTask('pluginbuilder', 'SystemJS build task to create plugin based bundles', function() {
 		var
 			done = this.async(),
-			options = this.options({onMessage: onMessage}),
-			pluginbuilder = new PluginBuilder(options)
+			options = this.options({onMessage: onMessage})
 		;
 
-		pluginbuilder
+		if (options.basePath) {
+			options.basePath = grunt.file.expand(options.basePath)[0];
+		}
+
+		if (options.pluginPathes) {
+			options.pluginPathes = grunt.file.expand(options.pluginPathes);
+		}
+
+		new PluginBuilder(options)
 			.build()
 			.then(function() {
 				grunt.log.writeln();
