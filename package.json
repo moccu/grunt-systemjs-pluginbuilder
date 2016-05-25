@@ -1,0 +1,40 @@
+{
+  "name": "grunt-systemjs-pluginbuilder",
+  "version": "0.0.1",
+  "description": "A grunt systemJS build tool task to create plugin based bundles",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt validate test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moccu/grunt-systemjs-pluginbuilder.git"
+  },
+  "keywords": [
+    "gruntplugin",
+    "systemjs",
+    "jspm",
+    "build",
+    "plugin",
+    "base"
+  ],
+  "author": "Norman Rusch (github.com/schorfES)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moccu/grunt-systemjs-pluginbuilder/issues"
+  },
+  "homepage": "https://github.com/moccu/grunt-systemjs-pluginbuilder",
+  "peerDependencies": {
+    "grunt": ">=0.4.0"
+  },
+  "dependencies": {
+    "systemjs-pluginbuilder": "git://github.com/moccu/systemjs-pluginbuilder.git"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-jscs": "^2.8.0",
+    "grunt-lintspaces": "^0.7.4"
+  }
+}
