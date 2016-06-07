@@ -47,7 +47,8 @@ The default value of this option is ```systemjs```.
 **Attention:** When using ```jspm``` as builder, the ```configPath``` option will
 be ignored. The builder uses the configured path to the config file inside the
 ```package.json```. You also should not rewrite the ```baseURL``` property using
-the ```config``` option. This value can be defined in the ```package.json``` too.
+the ```config``` option. This value can be defined in the ```package.json``` as
+well.
 
 ```javascript
 	builder: 'systemjs'
@@ -86,7 +87,7 @@ This option is _required_.
 ### ```pluginPaths```
 
 This is a list of all _plugin_ files. The build of these files will have a
-substracted module tree of the _base_ file. The pathes will be defined as
+substracted module tree of the _base_ file. The paths will be defined as
 ```array of strings```.
 
 ```javascript
@@ -98,7 +99,7 @@ substracted module tree of the _base_ file. The pathes will be defined as
 
 ### ```out```
 
-This defines the relative output path for builded _base_ and _plugin_ files. The
+This defines the relative output path for built _base_ and _plugin_ files. The
 path is defined relative to each source file (defined by ```basePath``` and
 ```pluginPaths```). The default value is ```'../build/'```.
 
@@ -107,10 +108,10 @@ path is defined relative to each source file (defined by ```basePath``` and
 ```
 
 *Example:* When using ```../build/``` as ```out``` option, with
-```js/src/Base.js``` being the location of the _base_ file, the build porocess
+```js/src/Base.js``` being the location of the _base_ file, the build process
 will output to ```js/build/Base.js```.
 
-## Configuration Examples
+## Configuration Example
 
 ```javascript
 	pluginbuilder: {
@@ -133,7 +134,7 @@ will output to ```js/build/Base.js```.
 
 ### Tests & Validation
 
-Run `grunt` to lint and run the tests.
+Run `grunt` to validate and run the tests.
 
 ## License
 
