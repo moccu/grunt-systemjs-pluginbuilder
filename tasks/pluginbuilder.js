@@ -6,13 +6,23 @@ var
 module.exports = function(grunt) {
 
 	function onMessage(data) {
-		var colors = {
-			error: 'red',
-			info: 'white',
-			success: 'green'
-		};
+		var
+			colors = {
+				error: 'red',
+				info: 'white',
+				success: 'green'
+			},
+			icons = {
+				error: String.fromCharCode(9747),
+				info: String.fromCharCode(8594),
+				success: String.fromCharCode(10004)
+			}
+		;
 
-		grunt.log.writeln(data.message[colors[data.type]]);
+		grunt.log.writeln(
+			icons[data.type][colors[data.type]] + ' ' +
+			data.message[colors[data.type]]
+		);
 	}
 
 	grunt.registerMultiTask('pluginbuilder', 'SystemJS build task to create plugin based bundles', function() {
