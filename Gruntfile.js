@@ -1,14 +1,16 @@
 var
 	FILES_TO_VALIDATE = [
 		'tasks/**/*.js',
-		'tests/**/*.js',
+		'tests/**/tests*.js',
+		'tests/**/fixtures/**/*.js',
 		'Gruntfile.js',
 
 		// Excludes:
 		'!**/build/**/*.js'
+
 	],
 	FILES_TO_TEST = [
-		'tests/tests*.js'
+		'tests/**/tests*.js'
 	]
 ;
 
@@ -58,11 +60,19 @@ module.exports = function(grunt) {
 		},
 
 		pluginbuilder: {
-			tests: {
+			tests_systemjs: {
 				options: {
-					configPath: 'tests/config.js',
-					basePath: 'tests/fixtures/Base.js',
-					pluginPathes: 'tests/fixtures/Plugin*.js'
+					builder: 'systemjs',
+					configPath: 'tests/systemjs/config.js',
+					basePath: 'tests/systemjs/fixtures/Base.js',
+					pluginPathes: 'tests/systemjs/fixtures/Plugin*.js'
+				}
+			},
+			tests_jspm: {
+				options: {
+					builder: 'jspm',
+					basePath: 'tests/jspm/fixtures/Base.js',
+					pluginPathes: 'tests/jspm/fixtures/Plugin*.js'
 				}
 			}
 		}
