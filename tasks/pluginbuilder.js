@@ -25,8 +25,8 @@ module.exports = function(grunt) {
 			options.basePath = grunt.file.expand(options.basePath)[0];
 		}
 
-		if (options.pluginPathes) {
-			options.pluginPathes = grunt.file.expand(options.pluginPathes);
+		if (options.pluginPaths) {
+			options.pluginPaths = grunt.file.expand(options.pluginPaths);
 		}
 
 		new PluginBuilder(options)

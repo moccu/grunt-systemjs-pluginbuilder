@@ -69,14 +69,14 @@ module.exports = function(grunt) {
 					builder: 'systemjs',
 					configPath: 'tests/systemjs/config.js',
 					basePath: 'tests/systemjs/fixtures/Base.js',
-					pluginPathes: 'tests/systemjs/fixtures/Plugin*.js'
+					pluginPaths: 'tests/systemjs/fixtures/Plugin*.js'
 				}
 			},
 			tests_jspm: {
 				options: {
 					builder: 'jspm',
 					basePath: 'tests/jspm/fixtures/Base.js',
-					pluginPathes: 'tests/jspm/fixtures/Plugin*.js'
+					pluginPaths: 'tests/jspm/fixtures/Plugin*.js'
 				}
 			}
 		},
