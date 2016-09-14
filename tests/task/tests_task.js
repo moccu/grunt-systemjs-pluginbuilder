@@ -27,12 +27,12 @@ exports.tests = {
 		});
 	},
 
-	'should end up with error (code=6)': function(test) {
+	'should end up with error (code=1)': function(test) {
 		test.expect(2);
 
 		exec('grunt pluginbuilder:tests_task_fail', function(error, stdout) {
 			test.ok(stdout.indexOf('Your build failed') > -1);
-			test.equal(error.code, 6);
+			test.equal(error.code, 1);
 			test.done();
 		});
 	}
