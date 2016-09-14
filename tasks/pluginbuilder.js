@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 			.catch(function(error) {
 				grunt.log.writeln();
 				grunt.log.writeln('Your build failed'.red);
-				grunt.fail.warn(error);
+				grunt.fail.fatal(error);
 			});
 	});
 

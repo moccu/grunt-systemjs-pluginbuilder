@@ -78,7 +78,23 @@ module.exports = function(grunt) {
 					basePath: 'tests/jspm/fixtures/Base.js',
 					pluginPaths: 'tests/jspm/fixtures/Plugin*.js'
 				}
-			}
+			},
+			tests_task_success: {
+				options: {
+					builder: 'systemjs',
+					configPath: 'tests/task/config.js',
+					basePath: 'tests/task/fixtures/Base.js',
+					pluginPaths: 'tests/task/fixtures/PluginSucceess.js'
+				}
+			},
+			tests_task_fail: {
+				options: {
+					builder: 'systemjs',
+					configPath: 'tests/task/config.js',
+					basePath: 'tests/task/fixtures/Base.js',
+					pluginPaths: 'tests/task/fixtures/PluginFail.js'
+				}
+			},
 		},
 
 		concat: {
